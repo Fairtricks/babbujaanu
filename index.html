@@ -3,81 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be My Valentine? 💖</title>
+    <title>Will You Be My Valentine? 💖</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Question Screen -->
-    <div id="question-screen" class="screen active">
-        <div class="stars"></div>
-        <div class="question-card">
-            <div class="question-number">Question for You</div>
-            <h1 class="question-text">Will you be my Valentine? 💖</h1>
-            
-            <div class="options-grid">
-                <button class="option-btn" id="option-yes" data-testid="option-yes">
-                    <span class="option-label">A</span>
-                    <span class="option-text">Yes ❤️</span>
-                </button>
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="screen active">
+        <div class="quiz-container">
+            <div class="question-card">
+                <h1 class="question-text">Will you be my Valentine? 💖</h1>
                 
-                <button class="option-btn runner-btn" id="option-runner" data-testid="option-runner">
-                    <span class="option-label">B</span>
-                    <span class="option-text">No 😐</span>
-                </button>
-                
-                <button class="option-btn shy-btn" id="option-shy" data-testid="option-shy">
-                    <span class="option-label">C</span>
-                    <span class="option-text">Let me think 🤔</span>
-                </button>
-                
-                <button class="option-btn fake-btn" id="option-fake" data-testid="option-fake">
-                    <span class="option-label">D</span>
-                    <span class="option-text">No, sorry 🙃</span>
-                </button>
+                <div class="answers-grid">
+                    <!-- Option A: Real Yes -->
+                    <button id="yes-btn" class="answer-btn yes-btn">
+                        <span class="option-label">A</span>
+                        <span class="option-text">Absolutely Yes... ❤️</span>
+                    </button>
+                    
+                    <!-- Option B: Runner Button -->
+                    <button id="runner-btn" class="answer-btn runner-btn">
+                        <span class="option-label">B</span>
+                        <span class="option-text">No 😐</span>
+                    </button>
+                    
+                    <!-- Option C: Shy Button -->
+                    <button id="shy-btn" class="answer-btn shy-btn">
+                        <span class="option-label">C</span>
+                        <span class="option-text">Let me think 🤔</span>
+                    </button>
+                    
+                    <!-- Option D: Fake Button -->
+                    <button id="fake-btn" class="answer-btn fake-btn">
+                        <span class="option-label">D</span>
+                        <span class="option-text">No, sorry 🙃</span>
+                    </button>
+                </div>
             </div>
-            
-            <div class="tooltip" id="tooltip"></div>
         </div>
     </div>
 
     <!-- Success Screen -->
-    <div id="success-screen" class="screen" data-testid="success-screen">
-        <div class="confetti-container" id="confetti-container"></div>
-        <div class="floating-hearts" id="floating-hearts"></div>
-        
-        <div class="success-content">
-            <h1 class="success-title" data-testid="success-title">You Said Yes! 💕</h1>
+    <div id="success-screen" class="screen">
+        <div class="success-container">
+            <div class="confetti-container" id="confetti-container"></div>
             
-            <div class="success-message" data-testid="success-message">
-                <p class="hurrah-text">Hurrah, you are mine now 🎉</p>
-                <p class="unlock-text">You've officially unlocked:</p>
-                <ul class="unlock-list">
-                    <li>• A Valentine</li>
-                    <li>• A date</li>
-                    <li>• Unlimited smiles</li>
-                </ul>
-            </div>
-            
-            <div class="gifs-container">
-                <div class="gif-item">
-                    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3N1NHY2MTVsaXpkMjh1N3M4NHQ5bTNzMXp1cTduZXRnOW9qaHlzNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/axWao9u3DudY2NQWkM/giphy.gif" alt="Hurrah" data-testid="gif-hurrah">
+            <div class="success-content">
+                <!-- Hurrah GIF at top -->
+                <div class="gif-container hurrah-gif">
+                    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3N1NHY2MTVsaXpkMjh1N3M4NHQ5bTNzMXp1cTduZXRnOW9qaHlzNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/axWao9u3DudY2NQWkM/giphy.gif" alt="Hurrah!">
                 </div>
-                <div class="gif-item">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTJsYXFyZXZ1MDc0OWRrd3BzaTJ2cXo2NzY3Y3FsMXg4a2N2aWFucyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qFmdpUKAFZ6rMobzzu/giphy.gif" alt="Hug" data-testid="gif-hug">
+
+                <h1 class="success-title">You Said Yes! 💕</h1>
+                
+                <div class="success-message">
+                    <p class="big-text">Hurrah, You are mine now! 🎉</p>
+                    <p class="unlock-text">You've officially unlocked:</p>
+                    <ul class="unlocked-list">
+                        <li>• A Valentine</li>
+                        <li>• A date</li>
+                        <li>• Unlimited smiles</li>
+                    </ul>
                 </div>
-                <div class="gif-item">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eDM2MmZycWg1ejA1ZTExbHBrZ2QzcW82bDI4N3AwYjZxNTFuNHFmMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/j0d7S4Nn9wQ7xQVder/giphy.gif" alt="Flowers" data-testid="gif-flowers">
+
+                <!-- GIFs Grid -->
+                <div class="gifs-grid">
+                    <div class="gif-item">
+                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTJsYXFyZXZ1MDc0OWRrd3BzaTJ2cXo2NzY3Y3FsMXg4a2N2aWFucyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qFmdpUKAFZ6rMobzzu/giphy.gif" alt="Hug">
+                    </div>
+                    <div class="gif-item">
+                        <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eDM2MmZycWg1ejA1ZTExbHBrZ2QzcW82bDI4N3AwYjZxNTFuNHFmMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/j0d7S4Nn9wQ7xQVder/giphy.gif" alt="Flowers">
+                    </div>
+                    <div class="gif-item">
+                        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnJmb3hscHhwN21xcjlhaG5wZHdwYzBuZ2U4ODZ2ZjIyN2VuMnVqMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/dEYC73sXpbsEBWom9j/giphy.gif" alt="Valentine">
+                    </div>
                 </div>
-                <div class="gif-item">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnJmb3hscHhwN21xcjlhaG5wZHdwYzBuZ2U4ODZ2ZjIyN2VuMnVqMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/dEYC73sXpbsEBWom9j/giphy.gif" alt="Valentine" data-testid="gif-valentine">
-                </div>
+
+                <!-- Floating Hearts -->
+                <div class="hearts-container" id="hearts-container"></div>
             </div>
         </div>
-        
-        <audio id="success-audio" preload="auto">
-            <source src="assets/success.mp3" type="audio/mpeg">
-        </audio>
     </div>
+
+    <!-- Audio Element -->
+    <audio id="success-audio" preload="auto">
+        <source src="assets/success.mp3" type="audio/mpeg">
+    </audio>
 
     <script src="script.js"></script>
 </body>
